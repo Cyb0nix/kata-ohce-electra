@@ -3,8 +3,8 @@ package info.dmerej;
 public class Ohce {
   private final ConsoleInteractor interactor;
 
-  public Ohce() {
-    interactor = new ConsoleInteractor();
+  public Ohce(ConsoleInteractor consoleInteractor) {
+    interactor = consoleInteractor;
   }
 
   public void mainLoop() {

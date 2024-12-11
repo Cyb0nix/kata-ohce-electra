@@ -6,7 +6,7 @@ public class Application {
     String greetings = greeter.greet();
     System.out.println(greetings);
 
-    var ohce = new Ohce();
+    var ohce = new Ohce(new ConsoleInteractor());
     ohce.mainLoop();
   }
 }

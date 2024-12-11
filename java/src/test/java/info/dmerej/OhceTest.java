@@ -2,23 +2,25 @@ package info.dmerej;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OhceTest {
   @Test
   void testMainLoop() {
-    /*
-     TODO: check that given the following inputs:
-      - hello
-      - oto
-     - quit
+    ArrayList<String> inputs = new ArrayList<>();
+    inputs.add("hello");
+    inputs.add("oto");
+    inputs.add("quit");
 
-    The following messages are shown to the user:
-     - olleh
-     - oto
-     - That was a palindrome!
+    MockConsoleInteractor mockInteractor = new MockConsoleInteractor(inputs);
+    Ohce ohce = new Ohce(mockInteractor);
+    ohce.mainLoop();
 
-    */
-    fail("TODO");
+    List<String> output = mockInteractor.getOutput();
+    assert output.size() == 3;
+    assert output.get(0).equals("olleh");
+    assert output.get(1).equals("oto");
+    assert output.get(2).equals("That was a palindrome!");
   }
 }
